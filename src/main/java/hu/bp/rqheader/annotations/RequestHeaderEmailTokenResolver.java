@@ -7,13 +7,13 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-public class RequestHeaderEmailResolver implements HandlerMethodArgumentResolver {
-    public static final String HEADER_NAME = "X-EMAIL";
+public class RequestHeaderEmailTokenResolver implements HandlerMethodArgumentResolver {
+    public static final String HEADER_NAME = "X-EMAIL-TOKEN";
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         return String.class.equals(parameter.getParameter().getType())
-                && parameter.hasParameterAnnotation(RequestHeaderEmail.class);
+                && parameter.hasParameterAnnotation(RequestHeaderEmailToken.class);
     }
 
     @Override

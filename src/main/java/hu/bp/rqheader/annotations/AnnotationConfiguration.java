@@ -12,6 +12,7 @@ public class AnnotationConfiguration implements WebMvcConfigurer {
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(new RequestHeaderEmailResolver());
+        argumentResolvers.add(new RequestHeaderEmailTokenResolver());
     }
 
 }
